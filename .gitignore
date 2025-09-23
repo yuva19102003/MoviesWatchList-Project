@@ -1,0 +1,80 @@
+# ===================================
+# OS / IDE
+# ===================================
+.vscode/
+.idea/
+*.user
+*.suo
+*.swp
+*.DS_Store
+Thumbs.db
+
+# ===================================
+# .NET build artifacts
+# ===================================
+bin/
+obj/
+out/
+*.dll
+*.exe
+*.pdb
+*.cache
+*.log
+*.vs/
+*.dbmdl
+*.jfm
+*.snupkg
+
+# NuGet
+*.nupkg
+*.nuspec
+project.lock.json
+project.fragment.lock.json
+artifacts/
+
+# Test results
+TestResult*/
+[Bb]uild[Ll]og.*
+*.TestResults.xml
+*.coverage
+*.coveragexml
+
+# ===================================
+# Node / Next.js frontend
+# ===================================
+node_modules/
+.next/
+dist/
+out/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Environment files
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# ===================================
+# Logs
+# ===================================
+*.log
+logs/
+lerna-debug.log*
+
+# ===================================
+# Docker
+# ===================================
+*.pid
+*.seed
+*.pid.lock
+
+# ===================================
+# Other
+# ===================================
+coverage/
+*.tgz
+*.tar.gz

@@ -1,0 +1,205 @@
+
+Create a mobile-responsive Next.js single-page application for a **Movie Watchlist Web App**.
+
+### Requirements:
+
+1. Use **Next.js (App Router)** with **TailwindCSS** for styling.
+2. Fetch API endpoints from URLs stored in `.env.local`:
+
+   * `NEXT_PUBLIC_API_BASE_URL=http://localhost:5000`
+
+### Endpoints with Request & Response:
+
+* **GET /movies**
+
+  * Response:
+
+    ```json
+    [
+  {
+    "id": 1,
+    "title": "Inception",
+    "genre": "Sci-Fi",
+    "director": "Christopher Nolan",
+    "releaseYear": 2010,
+    "watched": false,
+    "rating": 9,
+    "description": "A mind-bending thriller about dreams within dreams.",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/en/2/2e/Inception_%282010%29_theatrical_poster.jpg"
+  },
+  {
+    "id": 2,
+    "title": "The Dark Knight",
+    "genre": "Action",
+    "director": "Christopher Nolan",
+    "releaseYear": 2008,
+    "watched": true,
+    "rating": 9.5,
+    "description": "Batman fights crime in Gotham City.",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/en/1/1c/The_Dark_Knight_%282008_film%29.jpg"
+  },
+  {
+    "id": 3,
+    "title": "Interstellar",
+    "genre": "Sci-Fi",
+    "director": "Christopher Nolan",
+    "releaseYear": 2014,
+    "watched": false,
+    "rating": 8.8,
+    "description": "A team of explorers travel through a wormhole in space.",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/en/b/bc/Interstellar_film_poster.jpg"
+  },
+  {
+    "id": 4,
+    "title": "The Matrix",
+    "genre": "Sci-Fi",
+    "director": "Lana Wachowski",
+    "releaseYear": 1999,
+    "watched": true,
+    "rating": 9,
+    "description": "A hacker discovers the reality is a simulation.",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/en/d/db/The_Matrix.png"
+  },
+  {
+    "id": 5,
+    "title": "Avengers: Endgame",
+    "genre": "Action",
+    "director": "Anthony Russo",
+    "releaseYear": 2019,
+    "watched": false,
+    "rating": 8.4,
+    "description": "The Avengers assemble to undo Thanos' actions.",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/en/0/0d/Avengers_Endgame_poster.jpg"
+  },
+  {
+    "id": 6,
+    "title": "The Godfather",
+    "genre": "Crime",
+    "director": "Francis Ford Coppola",
+    "releaseYear": 1972,
+    "watched": true,
+    "rating": 9.2,
+    "description": "The aging patriarch of an organized crime dynasty transfers control to his son.",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/en/1/1c/Godfather_ver1.jpg"
+  },
+  {
+    "id": 7,
+    "title": "Pulp Fiction",
+    "genre": "Crime",
+    "director": "Quentin Tarantino",
+    "releaseYear": 1994,
+    "watched": false,
+    "rating": 8.9,
+    "description": "The lives of two mob hitmen, a boxer, and others intertwine.",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/en/3/3b/Pulp_Fiction_%281994%29_poster.jpg"
+  },
+  {
+    "id": 8,
+    "title": "Fight Club",
+    "genre": "Drama",
+    "director": "David Fincher",
+    "releaseYear": 1999,
+    "watched": true,
+    "rating": 8.8,
+    "description": "An insomniac office worker forms an underground fight club.",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/en/f/fc/Fight_Club_poster.jpg"
+  },
+  {
+    "id": 9,
+    "title": "Forrest Gump",
+    "genre": "Drama",
+    "director": "Robert Zemeckis",
+    "releaseYear": 1994,
+    "watched": false,
+    "rating": 8.7,
+    "description": "The life story of Forrest Gump, a man with a low IQ.",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/en/6/67/Forrest_Gump_poster.jpg"
+  },
+  {
+    "id": 10,
+    "title": "The Shawshank Redemption",
+    "genre": "Drama",
+    "director": "Frank Darabont",
+    "releaseYear": 1994,
+    "watched": true,
+    "rating": 9.3,
+    "description": "Two imprisoned men bond over years, finding hope and redemption.",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/en/8/81/ShawshankRedemptionMoviePoster.jpg"
+  }
+]
+    ```
+
+* **GET /movies/{id}**
+
+  * Response:
+
+    ```json
+    {
+      "id": 1,
+      "title": "Inception",
+      "genre": "Sci-Fi",
+      "director": "Christopher Nolan",
+      "releaseYear": 2010,
+      "watched": true,
+      "rating": 9,
+      "description": "A mind-bending thriller",
+      "imageUrl": "https://image.com/inception.jpg"
+    }
+    ```
+
+* **POST /movies**
+
+  * Request:
+
+    ```json
+    {
+      "title": "Interstellar",
+      "genre": "Sci-Fi",
+      "director": "Christopher Nolan",
+      "releaseYear": 2014,
+      "watched": false,
+      "rating": 10,
+      "description": "Space exploration",
+      "imageUrl": "https://image.com/interstellar.jpg"
+    }
+    ```
+  * Response: same object with `id`.
+
+* **PUT /movies/{id}**
+
+  * Request: (same as POST, but updates fields).
+  * Response: updated object.
+
+* **DELETE /movies/{id}**
+
+  * Response: `204 No Content`.
+
+### UI Pages/Sections:
+
+* **Navbar**: Links → Home, Add Movie. Include a **dark/light theme toggle** (left to right switch).
+* **Footer**: Simple footer with copyright.
+* **Home Page**: Display all movies in grid with poster image, title, rating, and a badge if watched/unwatched.
+* **Movie Details Page**: Show full details of a selected movie.
+* **Add Movie Page**: Form for adding a new movie.
+* **Edit Movie Page**: Form pre-filled with existing movie details for editing.
+
+### Components:
+
+* **Header/Navbar** with theme toggle.
+* **Footer**.
+* **MovieCard**: Displays movie poster, title, rating, watched status.
+* **MovieForm**: Reusable form for Add/Edit.
+
+### Functionality:
+
+* Use **fetch API** with async/await to call the backend.
+* Store all API requests in `lib/api.js` helper file that reads from `.env.local`.
+* Mobile responsive: grid collapses into single-column on small screens, navbar collapses into hamburger.
+* Minimal animations: hover zoom on cards, button effects.
+
+### Tech Stack:
+
+* Next.js (App Router)
+* TailwindCSS
+* React Hooks
+* Environment variables for API base URL

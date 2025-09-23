@@ -1,0 +1,39 @@
+### Get all movies
+GET http://localhost:5000/movies
+
+### Get a movie by ID
+GET http://localhost:5000/movies/5
+
+### Add a new movie
+POST http://localhost:5000/movies
+Content-Type: application/json
+
+{
+  "title": "The Dark Knight 2",
+  "genre": "Action",
+  "director": "Christopher Nolan",
+  "releaseYear": 2018,
+  "watched": true,
+  "rating": 9.0,
+  "description": "Batman faces the Joker.",
+  "imageUrl": "http://upload.wikimedia.org/wikipedia/en/8/8a/Dark_Knight.jpg"
+}
+
+### Update a movie
+PUT http://localhost:5000/movies/12
+Content-Type: application/json
+
+{
+  "id": 12,
+  "title": "The Dark Knight Rises 2",
+  "genre": "Action",
+  "director": "Christopher Nolan",
+  "releaseYear": 2012,
+  "watched": false,
+  "rating": 8.5,
+  "description": "Final movie of the trilogy.",
+  "imageUrl": "http://upload.wikimedia.org/wikipedia/en/8/83/Dark_knight_rises_poster.jpg"
+}
+
+### Delete a movie
+DELETE http://localhost:5000/movies/12

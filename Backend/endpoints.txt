@@ -1,0 +1,181 @@
+1.
+Request: GET http://localhost:5000/movies
+Response: [
+  {
+    "id": 1,
+    "title": "Inception",
+    "genre": "Sci-Fi",
+    "director": "Christopher Nolan",
+    "releaseYear": 2010,
+    "watched": false,
+    "rating": 9,
+    "description": "A mind-bending thriller about dreams within dreams.",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/en/2/2e/Inception_%282010%29_theatrical_poster.jpg"
+  },
+  {
+    "id": 2,
+    "title": "The Dark Knight",
+    "genre": "Action",
+    "director": "Christopher Nolan",
+    "releaseYear": 2008,
+    "watched": true,
+    "rating": 9.5,
+    "description": "Batman fights crime in Gotham City.",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/en/1/1c/The_Dark_Knight_%282008_film%29.jpg"
+  },
+  {
+    "id": 3,
+    "title": "Interstellar",
+    "genre": "Sci-Fi",
+    "director": "Christopher Nolan",
+    "releaseYear": 2014,
+    "watched": false,
+    "rating": 8.8,
+    "description": "A team of explorers travel through a wormhole in space.",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/en/b/bc/Interstellar_film_poster.jpg"
+  },
+  {
+    "id": 4,
+    "title": "The Matrix",
+    "genre": "Sci-Fi",
+    "director": "Lana Wachowski",
+    "releaseYear": 1999,
+    "watched": true,
+    "rating": 9,
+    "description": "A hacker discovers the reality is a simulation.",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/en/d/db/The_Matrix.png"
+  },
+  {
+    "id": 5,
+    "title": "Avengers: Endgame",
+    "genre": "Action",
+    "director": "Anthony Russo",
+    "releaseYear": 2019,
+    "watched": false,
+    "rating": 8.4,
+    "description": "The Avengers assemble to undo Thanos' actions.",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/en/0/0d/Avengers_Endgame_poster.jpg"
+  },
+  {
+    "id": 6,
+    "title": "The Godfather",
+    "genre": "Crime",
+    "director": "Francis Ford Coppola",
+    "releaseYear": 1972,
+    "watched": true,
+    "rating": 9.2,
+    "description": "The aging patriarch of an organized crime dynasty transfers control to his son.",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/en/1/1c/Godfather_ver1.jpg"
+  },
+  {
+    "id": 7,
+    "title": "Pulp Fiction",
+    "genre": "Crime",
+    "director": "Quentin Tarantino",
+    "releaseYear": 1994,
+    "watched": false,
+    "rating": 8.9,
+    "description": "The lives of two mob hitmen, a boxer, and others intertwine.",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/en/3/3b/Pulp_Fiction_%281994%29_poster.jpg"
+  },
+  {
+    "id": 8,
+    "title": "Fight Club",
+    "genre": "Drama",
+    "director": "David Fincher",
+    "releaseYear": 1999,
+    "watched": true,
+    "rating": 8.8,
+    "description": "An insomniac office worker forms an underground fight club.",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/en/f/fc/Fight_Club_poster.jpg"
+  },
+  {
+    "id": 9,
+    "title": "Forrest Gump",
+    "genre": "Drama",
+    "director": "Robert Zemeckis",
+    "releaseYear": 1994,
+    "watched": false,
+    "rating": 8.7,
+    "description": "The life story of Forrest Gump, a man with a low IQ.",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/en/6/67/Forrest_Gump_poster.jpg"
+  },
+  {
+    "id": 10,
+    "title": "The Shawshank Redemption",
+    "genre": "Drama",
+    "director": "Frank Darabont",
+    "releaseYear": 1994,
+    "watched": true,
+    "rating": 9.3,
+    "description": "Two imprisoned men bond over years, finding hope and redemption.",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/en/8/81/ShawshankRedemptionMoviePoster.jpg"
+  }
+]
+
+2.
+Request: GET http://localhost:5000/movies/5
+Response: {
+  "id": 5,
+  "title": "Avengers: Endgame",
+  "genre": "Action",
+  "director": "Anthony Russo",
+  "releaseYear": 2019,
+  "watched": false,
+  "rating": 8.4,
+  "description": "The Avengers assemble to undo Thanos' actions.",
+  "imageUrl": "https://upload.wikimedia.org/wikipedia/en/0/0d/Avengers_Endgame_poster.jpg"
+}
+
+
+3.
+Request: POST http://localhost:5000/movies
+Content-Type: application/json
+{
+  "title": "The Dark Knight 2",
+  "genre": "Action",
+  "director": "Christopher Nolan",
+  "releaseYear": 2018,
+  "watched": true,
+  "rating": 9.0,
+  "description": "Batman faces the Joker.",
+  "imageUrl": "http://upload.wikimedia.org/wikipedia/en/8/8a/Dark_Knight.jpg"
+}
+Response: {
+  "id": 12,
+  "title": "The Dark Knight 2",
+  "genre": "Action",
+  "director": "Christopher Nolan",
+  "releaseYear": 2018,
+  "watched": true,
+  "rating": 9,
+  "description": "Batman faces the Joker.",
+  "imageUrl": "http://upload.wikimedia.org/wikipedia/en/8/8a/Dark_Knight.jpg"
+}
+
+
+4.
+Request: PUT http://localhost:5000/movies/12
+Content-Type: application/json
+{
+  "id": 12,
+  "title": "The Dark Knight Rises 2",
+  "genre": "Action",
+  "director": "Christopher Nolan",
+  "releaseYear": 2012,
+  "watched": false,
+  "rating": 8.5,
+  "description": "Final movie of the trilogy.",
+  "imageUrl": "http://upload.wikimedia.org/wikipedia/en/8/83/Dark_knight_rises_poster.jpg"
+}
+Response: {
+  "id": 12,
+  "message": "The movie 'The Dark Knight Rises 2' is updated successfully"
+}
+
+5.
+Request: DELETE http://localhost:5000/movies/12
+Response: {
+  "id": 12,
+  "message": "The movie 'The Dark Knight Rises 2' was deleted successfully"
+}
