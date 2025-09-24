@@ -2,12 +2,15 @@
 
 A **full-stack Movie Watchlist application** built with:
 
+<img src="screenshots/Screenshot 2025-09-24 183407.png">
+
 * **Next.js frontend**
 * **ASP.NET Core Web API backend**
 * **EF Core + PostgreSQL (Docker)**
 * **EF Core Migrations**
 * **Automated unit tests (xUnit)**
 
+<img src="screenshots/Screenshot 2025-09-24 100449.png">
 Users can view, add, edit, and manage movies through a modern web interface.
 
 ---
@@ -65,6 +68,7 @@ dotnet add package dotenv.net
 ```bash
 docker run --name moviewatchlist-db -e POSTGRES_USER=postgres -e POSTGRES_PASSWORD=yourpassword -e POSTGRES_DB=MovieWatchListDb -p 5432:5432 -d postgres
 ```
+<img src="screenshots/Screenshot 2025-09-24 094520.png">
 
 4. Apply EF Core migrations:
 
@@ -72,16 +76,25 @@ docker run --name moviewatchlist-db -e POSTGRES_USER=postgres -e POSTGRES_PASSWO
 dotnet ef migrations add InitialCreate --project MovieWatchList.Migrations --startup-project MovieWatchList.Backend
 dotnet ef database update --project MovieWatchList.Migrations --startup-project MovieWatchList.Backend
 ```
+<img src="screenshots/Screenshot 2025-09-24 094638.png">
+
+DATABASE TABLE
+
+<img src="screenshots/Screenshot 2025-09-24 094721.png">
 
 5. Run backend API:
 
 ```bash
 dotnet run --project MovieWatchList.Backend
 ```
+<img src="screenshots/Screenshot 2025-09-24 095836.png">
 
 ---
 
 ### Backend Endpoints
+
+<img src="screenshots/Screenshot 2025-09-24 095938.png">
+
 
 | Method | Endpoint           | Description       |
 | ------ | ------------------ | ----------------- |
@@ -108,6 +121,7 @@ dotnet add package Microsoft.EntityFrameworkCore.InMemory
 ```bash
 dotnet test
 ```
+<img src="screenshots/Screenshot 2025-09-24 095652.png">
 
 * Tests cover all CRUD operations.
 * Uses InMemory database for speed and isolation.
@@ -122,6 +136,7 @@ dotnet test
 git clone <frontend-repo-url>
 cd <frontend-project-folder>
 ```
+<img src="screenshots/Screenshot 2025-09-24 100449.png">
 
 2. Install dependencies:
 
@@ -147,6 +162,10 @@ yarn dev
 
 Open [http://localhost:3000](http://localhost:3000) to view the app.
 
+<img src="screenshots/Screenshot 2025-09-24 100427.png">
+<img src="screenshots/Screenshot 2025-09-24 100506.png">
+<img src="screenshots/Screenshot 2025-09-24 100526.png">
+
 5. Build for production:
 
 ```bash
@@ -159,36 +178,9 @@ yarn start
 
 ---
 
-## 🗂 Project Structure
-
-**Backend**
-
-```
-/Models      - Movie entity
-/Data        - DbContext
-/Controllers - API endpoints
-/Migrations  - EF Core migrations
-```
-
-**Frontend**
-
-```
-/pages       - Next.js pages
-/components - Reusable React components
-/public      - Static assets
-/styles      - CSS modules or global styles
-```
-
-**Tests**
-
-```
-/Helpers     - TestDbContextFactory
-/Controllers - Unit tests for MoviesController
-```
-
----
-
 ## 🛠 Development Workflow
+
+<img src="screenshots/Screenshot 2025-09-24 100104.png">
 
 1. Start PostgreSQL Docker container
 2. Run backend API with migrations applied
