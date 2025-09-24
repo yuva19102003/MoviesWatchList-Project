@@ -142,7 +142,7 @@ namespace MovieWatchList.Backend.Tests
 
                 var result = await controller.UpdateMovie(movie.Id, movie);
 
-                Assert.IsType<NoContentResult>(result);
+                Assert.IsType<OkObjectResult>(result);
                 Assert.Equal("Inception Updated", context.Movies.Find(movie.Id)!.Title);
                 TestSummary.TestPassed("PUT /movies/{id}");
             }
@@ -164,7 +164,7 @@ namespace MovieWatchList.Backend.Tests
                 var movie = context.Movies.First();
                 var result = await controller.DeleteMovie(movie.Id);
 
-                Assert.IsType<NoContentResult>(result);
+                Assert.IsType<OkObjectResult>(result);
                 Assert.Equal(1, context.Movies.Count());
                 TestSummary.TestPassed("DELETE /movies/{id}");
             }
