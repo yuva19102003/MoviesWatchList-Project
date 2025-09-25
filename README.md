@@ -2,7 +2,7 @@
 
 A **full-stack Movie Watchlist application** built with:
 
-<img src="screenshots/Screenshot 2025-09-24 183407.png">
+<img src="screenshots/diagram.svg">
 
 * **Next.js frontend**
 * **ASP.NET Core Web API backend**
